@@ -8,7 +8,7 @@ module.exports = {
         path: __dirname + '/dist',
         filename: 'app.js'
     },
-    devserver: {
+    devServer: {
         contentBase: './dist/',
         historyApiFallback: true,
         hot: true,
@@ -27,7 +27,7 @@ module.exports = {
             },
             {
                 test: /\.(png|jpg|JPG|gif|woff|woff2|eot|ttf|svg)$/,
-                laoder: 'url-loader?limit=8192'
+                loader: 'url-loader?limit=8192'
             }
         ]
     },
