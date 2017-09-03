@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDom from 'react-dom';
 import { connect } from 'react-redux';
-import { addTodo, completeTodo, setVisibilityFilter, VisibilityFilter } from './action.js';
+import { addTodo, completeTodo, setVisibilityFilter, VisibilityFilter } from '../action.js';
 import AddTodo from './AddTodo.js';
 import TodoList from './TodoList.js';
 import Footer from './Footer.js';
@@ -18,10 +18,11 @@ class App extends React.Component {
 
     render() {
         const { dispatch, visibleTodos, visibilityFilter } = this.props;
+        console.log(visibleTodos);
         return (
             <div>
                 <AddTodo onAddClick={text => dispatch(addTodo(text))} />
-                <TodoList todos={this.props.visibleTodos} onTodoClick={text => dispatch(completeTodo(index))} />
+                <TodoList todos={this.props.visibleTodos} onTodoClick={index => dispatch(completeTodo(index))} />
                 <Footer filter={visibilityFilter} onFilterChange={nextFilter => dispatch(setVisibilityFilter(nextFilter))} />
             </div>
         );

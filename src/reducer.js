@@ -6,7 +6,7 @@ const { SHOW_ALL } = VisibilityFilter;
 //切换页签的reducer,根据状态值来过滤todolist展示的值
 function visibilityFilter(state = SHOW_ALL, action) {
     switch (action.type) {
-        case SET_VISIBILITY_FILTER:
+        case 'SET_VISIBILITY_FILTER':
             return action.filter;
         default:
             return state;
@@ -15,16 +15,20 @@ function visibilityFilter(state = SHOW_ALL, action) {
 
 //处理todo事项的reducer
 function todos(state = [], action) {
+    console.log(action);
+    console.log(action.type);
     switch (action.type) {
-        case ADD_TODO:
+        case 'ADD_TODO':
             return [...state, { text: action.text, completed: false }];
-        case COMPLETE_TODO:
+        case 'COMPLETE_TODO':
+            console.log('completed');
             return [
                 ...state.slice(0, action.index),
                 Object.assign({}, state[action.index], { completed: true }),
                 ...state.slice(action.index + 1)
             ];
         default:
+            console.log('no');
             return state;
     }
 }

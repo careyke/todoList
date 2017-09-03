@@ -7,18 +7,21 @@ class Footer extends React.Component{
         this.handleClick=this.handleClick.bind(this);
     }
 
-    handleClick(e){
+    handleClick(filter,e){
+        console.log(filter);
+        console.log(e);
         e.stopPropagation();
         e.preventDefault();
         this.props.onFilterChange(filter);
     }
 
     renderFilter(filter,name){
+        console.log(filter);
         if(filter===this.props.filter){
             return name;
         }
 
-        return (<a href='#' onClick={this.handleClick}>{name}</a>);
+        return (<a href='#' onClick={this.handleClick.bind(this,filter)}>{name}</a>);
     }
 
     render(){
