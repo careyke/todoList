@@ -1,0 +1,26 @@
+.addContainer{
+    display: flex;
+    height: 30px;
+    background-color: #D6F4FE;
+    padding: 5px;
+}
+.addContainer input{
+    flex-grow: 1;
+    border: 1px solid #3FB6DA;
+    outline: none;
+    border-right: none;
+    padding: 0 5px;
+    background-color: #D6F4FE;
+}
+.addContainer button{
+    flex-grow: 0;
+    width: 50px;
+    border: 1px solid #3FB6DA;
+    border-left: none;
+    background-color: #D6F4FE;
+    outline: none;
+    cursor: pointer;
+}
+.addContainer button:hover{
+    background-color: #3FB6DA;
+}

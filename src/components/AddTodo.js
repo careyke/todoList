@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDom from 'react-dom';
+require('../styles/addTodo.css');
 
 class AddTodo extends React.Component{
     constructor(props){
@@ -18,7 +19,7 @@ class AddTodo extends React.Component{
 
     render(){
         return(
-            <div>
+            <div className='addContainer' >
                 <input type='text' ref='input' />
                 <button onClick={this.handleClick}>Add</button>
             </div>

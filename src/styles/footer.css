@@ -1,0 +1,21 @@
+.navContainer{
+    display: flex;
+    padding: 5px;
+}
+.navContainer .navItem{
+    flex-grow: 1;
+    text-align: center;
+    display: block;
+    padding: 5px;
+    background-color: #D6F4FE;
+    cursor: pointer;
+
+}
+.navContainer .navItem:hover{
+    background-color: #58cdf1;
+    color: #ffffff;
+}
+.navContainer .navItem.active{
+    background-color: #3FB6DA;
+    color: #ffffff;
+}

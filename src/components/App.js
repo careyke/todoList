@@ -6,6 +6,8 @@ import AddTodo from './AddTodo.js';
 import TodoList from './TodoList.js';
 import Footer from './Footer.js';
 
+require('../styles/app.css');
+
 class App extends React.Component {
     constructor(props) {
         super(props);
@@ -18,9 +20,8 @@ class App extends React.Component {
 
     render() {
         const { dispatch, visibleTodos, visibilityFilter } = this.props;
-        console.log(visibleTodos);
         return (
-            <div>
+            <div className='container' >
                 <AddTodo onAddClick={text => dispatch(addTodo(text))} />
                 <TodoList todos={this.props.visibleTodos} onTodoClick={index => dispatch(completeTodo(index))} />
                 <Footer filter={visibilityFilter} onFilterChange={nextFilter => dispatch(setVisibilityFilter(nextFilter))} />

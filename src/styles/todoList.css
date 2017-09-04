@@ -1,0 +1,22 @@
+.listContainer{
+    display: flex;
+    min-height: 100px;
+    flex-direction: column;
+    padding: 10px 0;
+}
+.listContainer li{
+    list-style: none;
+    display: flex;
+    height: 30px;
+    padding: 5px;
+    align-items: center;
+    background-color: #D6F4FE;
+    margin: 8px 0;
+}
+.listContainer li.completed{
+    background-color: #DDDDDD;
+}
+.listContainer li.noCompleted:hover{
+    background-color: #3FB6DA;
+    color: #ffffff;
+}
